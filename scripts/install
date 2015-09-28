@@ -1,0 +1,32 @@
+#!/bin/bash
+	app=dyndns
+	set -e
+
+# Retrieve arguments
+	domain=$1
+	server=$2
+	login=$3
+	password=$4
+	protocol=$5
+
+# Save settings
+	sudo yunohost app setting $app domain -v "$domain"
+	sudo yunohost app setting $app server -v "$server"
+	sudo yunohost app setting $app login -v "$login"
+	sudo yunohost app setting $app protocol -v "$protocol"
+
+# Install ddclient
+	sudo apt-get install ddclient -y -qq
+
+# Setup and copy the ddclient configuration file
+	sed -i "s@PROTOCOL_CHANGE@$protocol@g" ../conf/ddclient.conf
+	sed -i "s@SERVER_CHANGE@$server@g" ../conf/ddclient.conf
+	sed -i "s@LOGIN_CHANGE@$login@g" ../conf/ddclient.conf
+	sed -i "s@PASSWORD_CHANGE@$password@g" ../conf/ddclient.conf
+	sed -i "s@DOMAIN_CHANGE@$domain@g" ../conf/ddclient.conf
+	sudo cp ../conf/ddclient.conf /etc/ddclient.conf
+
+# Add the ddclient service
+	sudo yunohost service add ddclient
+	sudo yunohost service stop ddclient
+	sudo yunohost service start ddclient

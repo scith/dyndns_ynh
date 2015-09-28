@@ -1,0 +1,6 @@
+#!/bin/bash
+	app=dyndns
+	
+# The parameter $1 is the backup directory location which will be compressed afterward
+	backup_dir=$1/apps/$app
+	sudo cp -a $backup_dir/ddclient.conf /etc/ddclient.conf

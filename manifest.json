@@ -1,0 +1,57 @@
+{
+    "name": "DynDNS",
+    "id": "dyndns",
+    "description": {
+        "en": "Links a DynDNS-compatible domain to a dynamic IP",
+        "fr": "Lie un domaine compatible DynDNS à une IP dynamique"
+    },
+    "developer": {
+        "name": "scith"
+    },
+    "multi_instance": "false",
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Enter the domain that will point to your YunoHost server",
+                    "fr": "Entrez le domaine qui pointera vers votre serveur YunoHost"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "server"
+                "ask": {
+                    "en": "Enter the server on which the IP address will be updated",
+                    "fr": "Entrez le serveur sur lequelle l'adresse IP sera mise à jour"
+                },
+                "example": "www.ovh.com"
+            },
+			{
+                "name": "login"
+                "ask": {
+                    "en": "Enter the login for the dynamic DNS server",
+                    "fr": "Entrez le nom d'utilisateur pour le serveur de DNS dynamique"
+                },
+                "example": "domain.org-user"
+            },
+			{
+                "name": "password",
+				"type": "password",
+                "ask": {
+                    "en": "Enter the password for the dynamic DNS server",
+                    "fr": "Entrez le mot de passe pour le serveur de DNS dynamique"
+                }
+            },
+			{
+                "name": "protocol"
+                "ask": {
+                    "en": "Enter the protocol used by the dynamic DNS server",
+                    "fr": "Entrez le protocole utilisé par le serveur de DNS dynamique"
+                },
+				"example": "dyndns2"
+            }
+        ]
+    }
+}

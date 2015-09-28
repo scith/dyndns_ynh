@@ -1,0 +1,4 @@
+#!/bin/bash
+	app=dyndns
+	sudo apt-get remove -y ddclient
+	sudo yunohost service remove ddclient

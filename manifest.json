@@ -21,7 +21,7 @@
                 "example": "domain.org"
             },
             {
-                "name": "server"
+                "name": "server",
                 "ask": {
                     "en": "Enter the server on which the IP address will be updated",
                     "fr": "Entrez le serveur sur lequelle l'adresse IP sera mise à jour"
@@ -29,7 +29,7 @@
                 "example": "www.ovh.com"
             },
 			{
-                "name": "login"
+                "name": "login",
                 "ask": {
                     "en": "Enter the login for the dynamic DNS server",
                     "fr": "Entrez le nom d'utilisateur pour le serveur de DNS dynamique"
@@ -45,7 +45,7 @@
                 }
             },
 			{
-                "name": "protocol"
+                "name": "protocol",
                 "ask": {
                     "en": "Enter the protocol used by the dynamic DNS server",
                     "fr": "Entrez le protocole utilisé par le serveur de DNS dynamique"

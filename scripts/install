@@ -16,6 +16,7 @@
 	sudo yunohost app setting $app protocol -v "$protocol"
 
 # Install ddclient
+	export DEBIAN_FRONTEND=noninteractive
 	sudo apt-get install ddclient -y -qq
 
 # Setup and copy the ddclient configuration file
